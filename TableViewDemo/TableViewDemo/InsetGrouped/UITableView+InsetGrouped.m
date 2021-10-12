@@ -66,6 +66,24 @@
             };
         });
         
+        
+        if (@available(iOS 13.0, *)) {
+            OverrideImplementation([UITableView class], @selector(layoutMargins), ^id(__unsafe_unretained Class originClass, SEL originCMD, IMP (^originalIMPProvider)(void)) {
+                return ^UIEdgeInsets(UITableView *selfObject) {
+                    // call super
+                    UIEdgeInsets (*originSelectorIMP)(id, SEL);
+                    originSelectorIMP = (UIEdgeInsets (*)(id, SEL))originalIMPProvider();
+                    UIEdgeInsets result = originSelectorIMP(selfObject, originCMD);
+                    
+                    if (selfObject.cc_isInsetGrouped) {
+                        result.left = selfObject.cc_safeAreaInsets.left + selfObject.cc_insetGroupedHorizontalInset;
+                        result.right = selfObject.cc_safeAreaInsets.right + selfObject.cc_insetGroupedHorizontalInset;
+                    }
+                    
+                    return result;
+                };
+            });
+        }
        
     });
 }
