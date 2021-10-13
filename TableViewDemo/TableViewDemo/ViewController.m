@@ -6,10 +6,19 @@
 //
 
 #import "ViewController.h"
+#import "CALayer+CornerRadius.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
+@property (weak, nonatomic) IBOutlet UIView *exView;
+
+@property (weak, nonatomic) IBOutlet UILabel *exLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *exButton;
+
 
 @end
 
@@ -18,6 +27,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+//    self.exView.cc_maskedCorners = CCUILayerMinXMinYCorner;
+//    self.exView.layer.masksToBounds = YES;
+//    self.exView.layer.cornerRadius = 10;
+//    self.exView.layer.borderColor = [UIColor blackColor].CGColor;
+//    self.exView.layer.borderWidth = 1;
+//
+//    self.exLabel.layer.masksToBounds = YES;
+//    self.exLabel.layer.cornerRadius = 10;
+//    self.exLabel.cc_maskedCorners = CCUILayerMinXMinYCorner;
+//    self.exLabel.layer.borderColor = [UIColor blackColor].CGColor;
+//    self.exLabel.layer.borderWidth = 1;
+//
+//
+//    self.exButton.layer.masksToBounds = YES;
+//    self.exButton.layer.cornerRadius = 10;
+//    self.exButton.cc_maskedCorners = CCUILayerMinXMinYCorner;
+//    self.exButton.layer.borderColor = [UIColor blackColor].CGColor;
+//    self.exButton.layer.borderWidth = 1;
+    
+    
 }
 
 

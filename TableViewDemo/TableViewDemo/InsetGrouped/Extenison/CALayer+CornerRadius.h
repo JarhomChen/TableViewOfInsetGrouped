@@ -17,21 +17,10 @@ typedef NS_OPTIONS (NSUInteger, CCUICornerMask) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (CornerRadius)
-
-//圆角大小 默认10
-@property (nonatomic, assign) CGFloat cc_cornerRadius;
-
-@property (nonatomic, assign) CCUICornerMask cc_maskedCorners;
-
-@end
-
-
-
 @interface CALayer (CornerRadius)
 
 //圆角大小 默认10
-@property (nonatomic, assign) CGFloat cc_cornerRadius;
+@property (nonatomic, assign) CGFloat cc_originCornerRadius;
 
 @property (nonatomic, assign) CCUICornerMask cc_maskedCorners;
 

@@ -5,7 +5,7 @@
 //  Created by Jarhom Chen on 2021/10/9.
 //
 
-#import "UIView+CornerRadius.h"
+#import "CALayer+CornerRadius.h"
 #import "CCRuntime.h"
 
 @implementation CALayer (CornerRadius)
@@ -24,8 +24,8 @@
 
 
 - (void)ccuilayer_setCornerRadius:(CGFloat)cornerRadius {
-    BOOL cornerRadiusChanged = flat(self.cc_cornerRadius) != flat(cornerRadius);// flat 处理，避免浮点精度问题
-    self.cc_cornerRadius = cornerRadius;
+    BOOL cornerRadiusChanged = flat(self.cc_originCornerRadius) != flat(cornerRadius);// flat 处理，避免浮点精度问题
+    self.cc_originCornerRadius = cornerRadius;
     if (@available(iOS 11, *)) {
         [self ccuilayer_setCornerRadius:cornerRadius];
     } else {
@@ -57,26 +57,13 @@
            (self.cc_maskedCorners & CCUILayerMaxXMaxYCorner) == CCUILayerMaxXMaxYCorner;
 }
 
-static char kAssociatedObjectKey_cc_cornerRadius;
-- (void)setCc_cornerRadius:(CGFloat)cc_cornerRadius {
-    CGFloat old_cornerRadius = self.cc_cornerRadius;
-    objc_setAssociatedObject(self, &kAssociatedObjectKey_cc_cornerRadius, @(cc_cornerRadius), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
-    if (old_cornerRadius != cc_cornerRadius) {
-        // 需要刷新mask
-        if ([NSThread isMainThread]) {
-            [self setNeedsLayout];
-        } else {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self setNeedsLayout];
-            });
-        }
-    }
-   
+static char kAssociatedObjectKey_cc_originCornerRadius;
+- (void)setCc_originCornerRadius:(CGFloat)cc_originCornerRadius {
+    objc_setAssociatedObject(self, &kAssociatedObjectKey_cc_originCornerRadius, @(cc_originCornerRadius), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGFloat)cc_cornerRadius {
-    NSNumber *associatedValue = (NSNumber *)objc_getAssociatedObject(self, &kAssociatedObjectKey_cc_cornerRadius);
+- (CGFloat)cc_originCornerRadius {
+    NSNumber *associatedValue = (NSNumber *)objc_getAssociatedObject(self, &kAssociatedObjectKey_cc_originCornerRadius);
     if (!associatedValue) {
         return 0.0;
     }
@@ -139,7 +126,7 @@ static NSString *kMaskName = @"CC_CornerRadius_Mask";
                     return;
                 }
                 if (selfObject.cc_maskedCorners) {
-                    if (selfObject.cc_cornerRadius <= 0 || [selfObject hasFourCornerRadius]) {
+                    if (selfObject.cc_originCornerRadius <= 0 || [selfObject hasFourCornerRadius]) {
 
                         if (selfObject.mask) {
                             selfObject.mask = nil;
@@ -160,7 +147,7 @@ static NSString *kMaskName = @"CC_CornerRadius_Mask";
                         if ((selfObject.cc_maskedCorners & CCUILayerMaxXMaxYCorner) == CCUILayerMaxXMaxYCorner) {
                             rectCorner |= UIRectCornerBottomRight;
                         }
-                        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:selfObject.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(selfObject.cc_cornerRadius, selfObject.cc_cornerRadius)];
+                        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:selfObject.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(selfObject.cc_originCornerRadius, selfObject.cc_originCornerRadius)];
                         cornerMaskLayer.frame = CGRectMake(0, 0, selfObject.bounds.size.width, selfObject.bounds.size.height);
                         cornerMaskLayer.path = path.CGPath;
                         selfObject.mask = cornerMaskLayer;
@@ -172,19 +159,19 @@ static NSString *kMaskName = @"CC_CornerRadius_Mask";
 }
                 
 
-- (void)setCc_cornerRadius:(CGFloat)cc_cornerRadius {
-    self.layer.cc_cornerRadius = cc_cornerRadius;
-}
-- (CGFloat)cc_cornerRadius {
-    return self.layer.cc_cornerRadius;
-}
-
-- (void)setCc_maskedCorners:(CCUICornerMask)cc_maskedCorners {
-    self.layer.cc_maskedCorners = cc_maskedCorners;
-}
-- (CCUICornerMask)cc_maskedCorners {
-    return self.layer.cc_maskedCorners;
-}
+//- (void)setCc_cornerRadius:(CGFloat)cc_cornerRadius {
+//    self.layer.cc_cornerRadius = cc_cornerRadius;
+//}
+//- (CGFloat)cc_cornerRadius {
+//    return self.layer.cc_cornerRadius;
+//}
+//
+//- (void)setCc_maskedCorners:(CCUICornerMask)cc_maskedCorners {
+//    self.layer.cc_maskedCorners = cc_maskedCorners;
+//}
+//- (CCUICornerMask)cc_maskedCorners {
+//    return self.layer.cc_maskedCorners;
+//}
 
 
 

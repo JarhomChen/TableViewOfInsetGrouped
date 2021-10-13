@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36893DFA2716715300A18C32 /* UIView+Inspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 36893DF92716715300A18C32 /* UIView+Inspectable.m */; };
+		36893DFD271681D100A18C32 /* UITableView+Inspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 36893DFC271681D100A18C32 /* UITableView+Inspectable.m */; };
 		368B412627103FC2006A3959 /* UITableView+InsetGrouped.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B412527103FC2006A3959 /* UITableView+InsetGrouped.m */; };
 		368B412B271040FB006A3959 /* NSMethodSignature+CCAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B412A271040FB006A3959 /* NSMethodSignature+CCAdd.m */; };
 		368B412E271122B0006A3959 /* UITableViewCell+InsetGrouped.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B412D271122AF006A3959 /* UITableViewCell+InsetGrouped.m */; };
 		368B413127113842006A3959 /* NSObject+InsetGrouped.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B413027113842006A3959 /* NSObject+InsetGrouped.m */; };
-		368B4134271143C9006A3959 /* UIView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B4133271143C9006A3959 /* UIView+CornerRadius.m */; };
+		368B4134271143C9006A3959 /* CALayer+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B4133271143C9006A3959 /* CALayer+CornerRadius.m */; };
 		36AE4A46270FE69C007B473F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AE4A45270FE69C007B473F /* AppDelegate.m */; };
 		36AE4A4C270FE69C007B473F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AE4A4B270FE69C007B473F /* ViewController.m */; };
 		36AE4A4F270FE69C007B473F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36AE4A4D270FE69C007B473F /* Main.storyboard */; };
@@ -21,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36893DF82716715300A18C32 /* UIView+Inspectable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Inspectable.h"; sourceTree = "<group>"; };
+		36893DF92716715300A18C32 /* UIView+Inspectable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Inspectable.m"; sourceTree = "<group>"; };
+		36893DFB271681D100A18C32 /* UITableView+Inspectable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Inspectable.h"; sourceTree = "<group>"; };
+		36893DFC271681D100A18C32 /* UITableView+Inspectable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Inspectable.m"; sourceTree = "<group>"; };
 		368B412427103FC2006A3959 /* UITableView+InsetGrouped.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+InsetGrouped.h"; sourceTree = "<group>"; };
 		368B412527103FC2006A3959 /* UITableView+InsetGrouped.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+InsetGrouped.m"; sourceTree = "<group>"; };
 		368B412827104099006A3959 /* CCRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCRuntime.h; sourceTree = "<group>"; };
@@ -30,8 +36,8 @@
 		368B412D271122AF006A3959 /* UITableViewCell+InsetGrouped.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+InsetGrouped.m"; sourceTree = "<group>"; };
 		368B412F27113842006A3959 /* NSObject+InsetGrouped.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+InsetGrouped.h"; sourceTree = "<group>"; };
 		368B413027113842006A3959 /* NSObject+InsetGrouped.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InsetGrouped.m"; sourceTree = "<group>"; };
-		368B4132271143C9006A3959 /* UIView+CornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CornerRadius.h"; sourceTree = "<group>"; };
-		368B4133271143C9006A3959 /* UIView+CornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerRadius.m"; sourceTree = "<group>"; };
+		368B4132271143C9006A3959 /* CALayer+CornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+CornerRadius.h"; sourceTree = "<group>"; };
+		368B4133271143C9006A3959 /* CALayer+CornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CornerRadius.m"; sourceTree = "<group>"; };
 		36AE4A41270FE69C007B473F /* TableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36AE4A44270FE69C007B473F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		36AE4A45270FE69C007B473F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,6 +70,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		36893DF42716701100A18C32 /* IBInspectable */ = {
+			isa = PBXGroup;
+			children = (
+				36893DF82716715300A18C32 /* UIView+Inspectable.h */,
+				36893DF92716715300A18C32 /* UIView+Inspectable.m */,
+				36893DFB271681D100A18C32 /* UITableView+Inspectable.h */,
+				36893DFC271681D100A18C32 /* UITableView+Inspectable.m */,
+			);
+			path = IBInspectable;
+			sourceTree = "<group>";
+		};
 		368B412327103F84006A3959 /* InsetGrouped */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,8 +109,8 @@
 			children = (
 				368B412F27113842006A3959 /* NSObject+InsetGrouped.h */,
 				368B413027113842006A3959 /* NSObject+InsetGrouped.m */,
-				368B4132271143C9006A3959 /* UIView+CornerRadius.h */,
-				368B4133271143C9006A3959 /* UIView+CornerRadius.m */,
+				368B4132271143C9006A3959 /* CALayer+CornerRadius.h */,
+				368B4133271143C9006A3959 /* CALayer+CornerRadius.m */,
 			);
 			path = Extenison;
 			sourceTree = "<group>";
@@ -118,6 +135,7 @@
 		36AE4A43270FE69C007B473F /* TableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				36893DF42716701100A18C32 /* IBInspectable */,
 				368B412327103F84006A3959 /* InsetGrouped */,
 				36AE4A44270FE69C007B473F /* AppDelegate.h */,
 				36AE4A45270FE69C007B473F /* AppDelegate.m */,
@@ -206,8 +224,10 @@
 				36AE4A46270FE69C007B473F /* AppDelegate.m in Sources */,
 				368B412627103FC2006A3959 /* UITableView+InsetGrouped.m in Sources */,
 				368B412B271040FB006A3959 /* NSMethodSignature+CCAdd.m in Sources */,
+				36893DFD271681D100A18C32 /* UITableView+Inspectable.m in Sources */,
 				368B412E271122B0006A3959 /* UITableViewCell+InsetGrouped.m in Sources */,
-				368B4134271143C9006A3959 /* UIView+CornerRadius.m in Sources */,
+				368B4134271143C9006A3959 /* CALayer+CornerRadius.m in Sources */,
+				36893DFA2716715300A18C32 /* UIView+Inspectable.m in Sources */,
 				36AE4A57270FE69D007B473F /* main.m in Sources */,
 				368B413127113842006A3959 /* NSObject+InsetGrouped.m in Sources */,
 			);

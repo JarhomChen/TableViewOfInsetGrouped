@@ -8,7 +8,7 @@
 #import "UITableView+InsetGrouped.h"
 #import "CCRuntime.h"
 #import "NSObject+InsetGrouped.h"
-#import "UIView+CornerRadius.h"
+#import "CALayer+CornerRadius.h"
 
 @implementation UITableView (InsetGrouped)
 
